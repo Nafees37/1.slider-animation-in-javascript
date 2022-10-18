@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>slider animation in javascript</title>
+    </head>
+    <body>
+        <center style="margin-top: 45px;">
+            <img src="images/0.jpg" width="1000px" height="650px" alt="img load" id="image1" />
+        </center>
+
+        <script>
+            let imageArray = ["images/0.jpg", "images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg", "images/6.jpg", "images/7.jpg", "images/8.jpg", "images/9.jpg", "images/10.jpg"];
+
+            let arrayIndex_num = 0;
+
+            let selectImage = document.getElementById("image1");
+
+            function imageFun() {
+                
+                arrayIndex_num++;
+
+                if (arrayIndex_num >= imageArray.length) {
+                    arrayIndex_num = 0;
+
+                    selectImage.src = imageArray[arrayIndex_num];
+                } else {
+                    selectImage.src = imageArray[arrayIndex_num];
+                }
+
+                setTimeout("imageFun()", 2000);
+            }
+
+            window.onload = imageFun();
+        </script>
+    </body>
+</html>
